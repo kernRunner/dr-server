@@ -8,7 +8,7 @@ WORKDIR /opt/
 COPY package.json yarn.lock ./
 RUN yarn global add node-gyp
 #RUN npm config set fetch-retry-maxtimeout 600000 -g
-RUN yarn install --only=production --verbose
+RUN yarn install --only=production
 ENV PATH /opt/node_modules/.bin:$PATH
 WORKDIR /opt/app
 COPY . .
