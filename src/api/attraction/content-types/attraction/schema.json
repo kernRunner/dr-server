@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "attractions",
+  "info": {
+    "singularName": "attraction",
+    "pluralName": "attractions",
+    "displayName": "attraction",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "lat": {
+      "type": "float"
+    },
+    "lng": {
+      "type": "float"
+    },
+    "hotspot": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::hotspot.hotspot",
+      "inversedBy": "attractions"
+    },
+    "title": {
+      "type": "string"
+    },
+    "more": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "alt": {
+      "type": "string"
+    }
+  }
+}

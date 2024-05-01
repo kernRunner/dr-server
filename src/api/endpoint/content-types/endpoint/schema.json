@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "endpoints",
+  "info": {
+    "singularName": "endpoint",
+    "pluralName": "endpoints",
+    "displayName": "endpoint",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "attaction": {
+      "type": "string"
+    },
+    "classes": {
+      "type": "string"
+    }
+  }
+}

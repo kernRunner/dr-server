@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "top_hotspots",
+  "info": {
+    "singularName": "top-hotspot",
+    "pluralName": "top-hotspots",
+    "displayName": "topHotspot",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hotspots": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::hotspot.hotspot",
+      "mappedBy": "top_hotspot"
+    }
+  }
+}

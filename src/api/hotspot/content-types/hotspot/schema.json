@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hotspots",
+  "info": {
+    "singularName": "hotspot",
+    "pluralName": "hotspots",
+    "displayName": "hotspot",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "lat": {
+      "type": "float"
+    },
+    "lng": {
+      "type": "float"
+    },
+    "country": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::country.country",
+      "inversedBy": "hotspots"
+    },
+    "attractions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::attraction.attraction",
+      "mappedBy": "hotspot"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "city",
+        "region"
+      ],
+      "required": true
+    },
+    "top_hotspot": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::top-hotspot.top-hotspot",
+      "inversedBy": "hotspots"
+    }
+  }
+}
