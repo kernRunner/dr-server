@@ -60,6 +60,12 @@
       "relation": "manyToOne",
       "target": "api::top-hotspot.top-hotspot",
       "inversedBy": "hotspots"
+    },
+    "activities": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::activity.activity",
+      "mappedBy": "hotspots"
     }
   }
 }

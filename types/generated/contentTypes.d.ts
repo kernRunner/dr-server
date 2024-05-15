@@ -794,6 +794,7 @@ export interface ApiActivityActivity extends Schema.CollectionType {
     singularName: 'activity';
     pluralName: 'activities';
     displayName: 'Activity';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -805,6 +806,11 @@ export interface ApiActivityActivity extends Schema.CollectionType {
     img_link: Attribute.String;
     title: Attribute.String;
     rating: Attribute.Float;
+    hotspots: Attribute.Relation<
+      'api::activity.activity',
+      'manyToMany',
+      'api::hotspot.hotspot'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1004,6 +1010,11 @@ export interface ApiHotspotHotspot extends Schema.CollectionType {
       'api::hotspot.hotspot',
       'manyToOne',
       'api::top-hotspot.top-hotspot'
+    >;
+    activities: Attribute.Relation<
+      'api::hotspot.hotspot',
+      'manyToMany',
+      'api::activity.activity'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
