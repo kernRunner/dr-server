@@ -788,6 +788,41 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiActivityActivity extends Schema.CollectionType {
+  collectionName: 'activities';
+  info: {
+    singularName: 'activity';
+    pluralName: 'activities';
+    displayName: 'Activity';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    u_id: Attribute.String;
+    link: Attribute.String;
+    description: Attribute.Text;
+    img_link: Attribute.String;
+    title: Attribute.String;
+    rating: Attribute.Float;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::activity.activity',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::activity.activity',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiAttractionAttraction extends Schema.CollectionType {
   collectionName: 'attractions';
   info: {
@@ -1041,6 +1076,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::activity.activity': ApiActivityActivity;
       'api::attraction.attraction': ApiAttractionAttraction;
       'api::country.country': ApiCountryCountry;
       'api::countryinfo.countryinfo': ApiCountryinfoCountryinfo;
