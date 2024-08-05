@@ -66,6 +66,11 @@
       "relation": "manyToMany",
       "target": "api::activity.activity",
       "mappedBy": "hotspots"
+    },
+    "meta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "metadata.meta"
     }
   }
 }
