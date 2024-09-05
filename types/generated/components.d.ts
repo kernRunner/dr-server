@@ -61,6 +61,16 @@ export interface BlogDescription extends Schema.Component {
   };
 }
 
+export interface BlogHr extends Schema.Component {
+  collectionName: 'components_blog_hrs';
+  info: {
+    displayName: 'hr';
+  };
+  attributes: {
+    value: Attribute.Integer & Attribute.DefaultTo<0>;
+  };
+}
+
 export interface BlogImage extends Schema.Component {
   collectionName: 'components_blog_images';
   info: {
@@ -126,6 +136,7 @@ declare module '@strapi/types' {
       'affiliate.category': AffiliateCategory;
       'blog.category': BlogCategory;
       'blog.description': BlogDescription;
+      'blog.hr': BlogHr;
       'blog.image': BlogImage;
       'blog.title': BlogTitle;
       'metadata.meta': MetadataMeta;

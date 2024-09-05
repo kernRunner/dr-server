@@ -34,7 +34,8 @@
       "components": [
         "blog.title",
         "blog.description",
-        "blog.image"
+        "blog.image",
+        "blog.hr"
       ]
     },
     "subtitle": {

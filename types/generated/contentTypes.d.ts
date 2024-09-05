@@ -924,7 +924,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     description: Attribute.Text;
     thumbnail: Attribute.Media;
     contentBlocks: Attribute.DynamicZone<
-      ['blog.title', 'blog.description', 'blog.image']
+      ['blog.title', 'blog.description', 'blog.image', 'blog.hr']
     >;
     subtitle: Attribute.String;
     category: Attribute.Component<'blog.category', true>;

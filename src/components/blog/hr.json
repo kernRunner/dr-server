@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blog_hrs",
+  "info": {
+    "displayName": "hr"
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "default": 0,
+      "type": "integer"
+    }
+  }
+}
