@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_affiliate_category_lists",
+  "info": {
+    "displayName": "categoryList"
+  },
+  "options": {},
+  "attributes": {
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Travel",
+        "Accomodation",
+        "Flights",
+        "Activitys"
+      ]
+    }
+  }
+}

@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "countries",
+  "collectionName": "blogs",
   "info": {
-    "singularName": "country",
-    "pluralName": "countries",
-    "displayName": "country",
+    "singularName": "blog",
+    "pluralName": "blogs",
+    "displayName": "Blog",
     "description": ""
   },
   "options": {
@@ -12,13 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
+    "Title": {
       "type": "string"
     },
     "description": {
       "type": "text"
     },
-    "image": {
+    "thumbnail": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -29,26 +29,27 @@
         "audios"
       ]
     },
-    "lat": {
-      "type": "float"
-    },
-    "lng": {
-      "type": "float"
-    },
-    "hotspots": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::hotspot.hotspot",
-      "mappedBy": "country"
+    "contentBlocks": {
+      "type": "dynamiczone",
+      "components": [
+        "blog.title",
+        "blog.description",
+        "blog.image"
+      ]
     },
     "subtitle": {
       "type": "string"
     },
-    "blogs": {
+    "category": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blog.category"
+    },
+    "countries": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::blog.blog",
-      "inversedBy": "countries"
+      "target": "api::country.country",
+      "mappedBy": "blogs"
     }
   }
 }

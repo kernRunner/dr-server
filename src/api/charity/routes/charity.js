@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * endpoint router
+ * charity router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::endpoint.endpoint');
+module.exports = createCoreRouter('api::charity.charity');

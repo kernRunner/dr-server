@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blog_titles",
+  "info": {
+    "displayName": "title"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "value": {
+      "type": "integer",
+      "max": 5,
+      "min": 0,
+      "default": 0
+    }
+  }
+}

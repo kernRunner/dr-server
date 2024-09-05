@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * endpoint controller
+ * charity controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::endpoint.endpoint');
+module.exports = createCoreController('api::charity.charity');

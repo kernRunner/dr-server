@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "affiliates",
+  "info": {
+    "singularName": "affiliate",
+    "pluralName": "affiliates",
+    "displayName": "affiliate",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "descr": {
+      "type": "text"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "link": {
+      "type": "string"
+    },
+    "category": {
+      "type": "component",
+      "repeatable": true,
+      "component": "affiliate.category-list"
+    }
+  }
+}

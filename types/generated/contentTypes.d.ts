@@ -811,6 +811,7 @@ export interface ApiActivityActivity extends Schema.CollectionType {
       'manyToMany',
       'api::hotspot.hotspot'
     >;
+    subtitle: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -822,6 +823,41 @@ export interface ApiActivityActivity extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::activity.activity',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiAffiliateAffiliate extends Schema.CollectionType {
+  collectionName: 'affiliates';
+  info: {
+    singularName: 'affiliate';
+    pluralName: 'affiliates';
+    displayName: 'affiliate';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    descr: Attribute.Text;
+    logo: Attribute.Media;
+    link: Attribute.String;
+    category: Attribute.Component<'affiliate.category-list', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::affiliate.affiliate',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::affiliate.affiliate',
       'oneToOne',
       'admin::user'
     > &
@@ -872,6 +908,74 @@ export interface ApiAttractionAttraction extends Schema.CollectionType {
   };
 }
 
+export interface ApiBlogBlog extends Schema.CollectionType {
+  collectionName: 'blogs';
+  info: {
+    singularName: 'blog';
+    pluralName: 'blogs';
+    displayName: 'Blog';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    description: Attribute.Text;
+    thumbnail: Attribute.Media;
+    contentBlocks: Attribute.DynamicZone<
+      ['blog.title', 'blog.description', 'blog.image']
+    >;
+    subtitle: Attribute.String;
+    category: Attribute.Component<'blog.category', true>;
+    countries: Attribute.Relation<
+      'api::blog.blog',
+      'manyToMany',
+      'api::country.country'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCharityCharity extends Schema.CollectionType {
+  collectionName: 'charities';
+  info: {
+    singularName: 'charity';
+    pluralName: 'charities';
+    displayName: 'charity';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    description: Attribute.Text;
+    image: Attribute.Media;
+    link: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::charity.charity',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::charity.charity',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCountryCountry extends Schema.CollectionType {
   collectionName: 'countries';
   info: {
@@ -893,6 +997,12 @@ export interface ApiCountryCountry extends Schema.CollectionType {
       'api::country.country',
       'oneToMany',
       'api::hotspot.hotspot'
+    >;
+    subtitle: Attribute.String;
+    blogs: Attribute.Relation<
+      'api::country.country',
+      'manyToMany',
+      'api::blog.blog'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -939,38 +1049,6 @@ export interface ApiCountryinfoCountryinfo extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::countryinfo.countryinfo',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiEndpointEndpoint extends Schema.CollectionType {
-  collectionName: 'endpoints';
-  info: {
-    singularName: 'endpoint';
-    pluralName: 'endpoints';
-    displayName: 'endpoint';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    attaction: Attribute.String;
-    classes: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::endpoint.endpoint',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::endpoint.endpoint',
       'oneToOne',
       'admin::user'
     > &
@@ -1089,10 +1167,12 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::activity.activity': ApiActivityActivity;
+      'api::affiliate.affiliate': ApiAffiliateAffiliate;
       'api::attraction.attraction': ApiAttractionAttraction;
+      'api::blog.blog': ApiBlogBlog;
+      'api::charity.charity': ApiCharityCharity;
       'api::country.country': ApiCountryCountry;
       'api::countryinfo.countryinfo': ApiCountryinfoCountryinfo;
-      'api::endpoint.endpoint': ApiEndpointEndpoint;
       'api::hotspot.hotspot': ApiHotspotHotspot;
       'api::top-hotspot.top-hotspot': ApiTopHotspotTopHotspot;
     }

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_blog_categories",
+  "info": {
+    "displayName": "category"
+  },
+  "options": {},
+  "attributes": {
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Travel Tips",
+        "Cultural Awareness",
+        "Lifestyle",
+        "Health & Wellness",
+        "Language & Communication",
+        "Environmental Awareness",
+        "Travel Philosophy",
+        "Personal Growth",
+        "Conscious Travel"
+      ]
+    }
+  }
+}
