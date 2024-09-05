@@ -1,17 +1,19 @@
 {
   "collectionName": "components_affiliate_category_lists",
   "info": {
-    "displayName": "categoryList"
+    "displayName": "categoryList",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "category": {
       "type": "enumeration",
       "enum": [
-        "Travel",
-        "Accomodation",
-        "Flights",
-        "Activitys"
+        "Tours & Activities",
+        "Travel Gear & Essentials",
+        "Flights & Accommodation",
+        "Mobile Connectivity & Travel Technology",
+        "Budget Travel & Affordable Deals"
       ]
     }
   }

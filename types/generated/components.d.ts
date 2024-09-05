@@ -4,10 +4,17 @@ export interface AffiliateCategoryList extends Schema.Component {
   collectionName: 'components_affiliate_category_lists';
   info: {
     displayName: 'categoryList';
+    description: '';
   };
   attributes: {
     category: Attribute.Enumeration<
-      ['Travel', 'Accomodation', 'Flights', 'Activitys']
+      [
+        'Tours & Activities',
+        'Travel Gear & Essentials',
+        'Flights & Accommodation',
+        'Mobile Connectivity & Travel Technology',
+        'Budget Travel & Affordable Deals'
+      ]
     >;
   };
 }
