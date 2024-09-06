@@ -933,6 +933,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
       'manyToMany',
       'api::country.country'
     >;
+    meta: Attribute.Component<'metadata.meta'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

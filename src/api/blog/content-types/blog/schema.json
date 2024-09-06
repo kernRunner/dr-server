@@ -51,6 +51,11 @@
       "relation": "manyToMany",
       "target": "api::country.country",
       "mappedBy": "blogs"
+    },
+    "meta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "metadata.meta"
     }
   }
 }
