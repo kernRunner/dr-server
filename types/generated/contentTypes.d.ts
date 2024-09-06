@@ -1005,6 +1005,7 @@ export interface ApiCountryCountry extends Schema.CollectionType {
       'manyToMany',
       'api::blog.blog'
     >;
+    meta: Attribute.Component<'metadata.meta'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

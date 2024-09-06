@@ -49,6 +49,11 @@
       "relation": "manyToMany",
       "target": "api::blog.blog",
       "inversedBy": "countries"
+    },
+    "meta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "metadata.meta"
     }
   }
 }
